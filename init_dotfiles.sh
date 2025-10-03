@@ -33,5 +33,13 @@ config config --local status.showUntrackedFiles no
 
 echo "Dotfiles配置完成！"
 echo "当前终端可使用 'config' 命令管理Dotfiles"
-echo "若需在新终端使用，请执行: alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'"
 
+# 安装Vundle插件管理器
+VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
+if [ -d "$VUNDLE_DIR" ]; then
+    echo "Vundle已存在，更新中..."
+    cd "$VUNDLE_DIR" && git pull origin master
+else
+    echo "开始安装vim插件管理器Vundle..."
+    git clone https://github.com/VundleVim/Vundle.vim.git "$VUNDLE_DIR"
+fi
