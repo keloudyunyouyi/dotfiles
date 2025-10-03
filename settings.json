@@ -73,7 +73,7 @@
         [
             {
                 "adjustIndistinguishableColors": "always",
-                "backgroundImage": "D:\\\u3010\u54f2\u98ce\u58c1\u7eb8\u3011\u52a8\u6f2b-\u6301\u5251.png",
+                "backgroundImage": "\\img\\background.png",
                 "backgroundImageAlignment": "center",
                 "backgroundImageOpacity": 0.41,
                 "backgroundImageStretchMode": "fill",
@@ -98,7 +98,7 @@
                 "useAcrylic": true
             },
             {
-                "backgroundImage": "D:\\mkm.png",
+                "backgroundImage": "\\img\\mkm.png",
                 "backgroundImageAlignment": "center",
                 "backgroundImageOpacity": 0.300001,
                 "backgroundImageStretchMode": "fill",
