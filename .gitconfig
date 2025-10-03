@@ -1,0 +1,16 @@
+[user]
+    name = lin                  # 替换为你的名字
+    email = keloudyunyouyi@gmail.com   # 替换为你的邮箱
+
+[core]                    
+    autocrlf = input                  # 处理换行符，Linux/macOS使用input，Windows使用true
+    excludesfile = ~/.gitignore       # 全局忽略文件配置
+
+[color]
+    ui = auto                         # 自动启用彩色输出
+    branch = auto
+    diff = auto
+    status = auto
+
+[pull]
+    rebase = true                    # 拉取时默认使用rebase而非merge
