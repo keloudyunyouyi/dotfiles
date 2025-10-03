@@ -8,10 +8,11 @@ set fileencoding=utf-8
 " 显示设置
 set number                    " 显示行号
 set relativenumber            " 显示相对行号
-set cursorline                " 高亮当前行
 set showcmd                   " 显示输入的命令
 set laststatus=2              " 总是显示状态栏
 set ruler                     " 显示光标位置
+" 终端用颜色编号（例如 12 代表蓝色）
+highlight LineNr ctermfg=12 guifg=#4EC9B0
 
 " 编辑设置
 set autoindent                " 自动缩进
