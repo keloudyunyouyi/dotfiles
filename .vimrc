@@ -13,20 +13,6 @@ set showcmd                   " 显示输入的命令
 set laststatus=2              " 总是显示状态栏
 set ruler                     " 显示光标位置
 
-" 窗口分割线设置
-set fillchars=vert:\│,stl:\ ,stlnc:\  " 垂直分割线使用│字符
-set splitright                " 新窗口默认在右侧
-set splitbelow                " 新窗口默认在下侧
-highlight VertSplit ctermbg=black ctermfg=white " 分割线颜色设置
-
-" 文档内部分隔符设置
-set list
-set listchars=tab:→\ ,trail:·,nbsp:·,eol:↲,space:·
-
-" 段落分隔线高亮（当存在多个空行时）
-autocmd BufEnter * highlight ExtraEmptyLines ctermbg=236 guibg=#303030
-autocmd BufEnter * match ExtraEmptyLines /^\s*$\n\s*$/
-
 " 编辑设置
 set autoindent                " 自动缩进
 set smartindent               " 智能缩进
