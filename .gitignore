@@ -1,24 +1,8 @@
+# 忽略所有文件
+*
 
-# macOS
-.DS_Store
-.DS_Store?
-
-
-# VS Code
-.vscode/
-*.code-workspace
-
-
-
-# JetBrains 系列 (IntelliJ IDEA,WebStorm, PyCharm 等)
-.idea/
-*.iml
-*.iws
-*.ipr
-out/
-build/
-
-# Git 自身
-.gitignore
-
-
+# 只跟踪这些配置文件
+!.zshrc
+!.vimrc
+!.config/
+!.gitconfig
