@@ -38,6 +38,12 @@ done
 export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
 
+# fnm
+FNM_PATH="/home/keloud/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
 
 ##############################################################################
 #                           终端交互与显示                                   #
