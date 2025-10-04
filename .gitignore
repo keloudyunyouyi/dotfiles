@@ -6,3 +6,6 @@
 !.vimrc
 !.config/
 !.gitconfig
+!init_dotfiles_inzsh.sh
+!config-auto-commit.sh
+!.gitignore
