@@ -44,6 +44,8 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+# go 环境
+export PATH=$PATH:/usr/local/go/bin
 
 ##############################################################################
 #                           终端交互与显示                                   #
