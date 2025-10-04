@@ -4,7 +4,6 @@
 
 [core]                    
     autocrlf = input                  # 处理换行符，Linux/macOS使用input，Windows使用true
-    excludesfile = ~/.gitignore       # 全局忽略文件配置
 
 [color]
     ui = auto                         # 自动启用彩色输出
