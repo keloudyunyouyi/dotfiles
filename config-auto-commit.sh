@@ -7,7 +7,7 @@ echo "请输入提交信息（按回车使用默认信息）："
 read COMMIT_MESSAGE
 
 if [ -z "$COMMIT_MESSAGE" ]; then
-    COMMIT_MESSAGE="update dotfiles $(date +"%Y-%m-%d %H:%M:%S")"
+    COMMIT_MESSAGE="auto_message:update dotfiles"
     echo "使用默认提交信息: $COMMIT_MESSAGE"
 fi
 
