@@ -55,6 +55,16 @@ if command -v brew >/dev/null 2>&1; then
     eval "$(brew shellenv)"
 fi
 
+# Linuxbrew 环境配置
+LINUXBREW_PATH="/home/linuxbrew/.linuxbrew/bin"
+if [ -d "$LINUXBREW_PATH" ]; then
+  # 检查 brew 可执行文件是否存在
+  if [ -x "$LINUXBREW_PATH/brew" ]; then
+    export PATH="$LINUXBREW_PATH:$PATH"
+    eval "$($LINUXBREW_PATH/brew shellenv)"
+  fi
+fi
+
 ##############################################################################
 #                           终端交互与显示                                   #
 ##############################################################################
