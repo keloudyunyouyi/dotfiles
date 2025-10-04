@@ -14,3 +14,5 @@
 
 [pull]
     rebase = true                    # 拉取时默认使用rebase而非merge
+[credential]
+	helper = store
