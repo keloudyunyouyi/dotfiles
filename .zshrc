@@ -85,3 +85,4 @@ function y() {
   fi
   rm -f -- "$tmp"
 }
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
