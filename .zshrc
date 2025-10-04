@@ -18,7 +18,7 @@ ZSH_CUSTOM=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
 declare -A plugins_to_install=(
   ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
   ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
-  ["zsh-completions"]="https://github.com/zsh-users/zsh-completions.git"  # 命令补全增强
+  ["zsh-completions"]="https://github.com/zsh-users/zsh-completions.git"
 )
 
 # 自动安装缺失的插件
@@ -39,24 +39,33 @@ export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
 
 # fnm
-FNM_PATH="/home/keloud/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+
 # go 环境
-export PATH=$PATH:/usr/local/go/bin
+if [ -d "/usr/local/go/bin" ]; then
+  export PATH=$PATH:/usr/local/go/bin
+fi
+
+# Homebrew (跨设备安全判断)
+if command -v brew >/dev/null 2>&1; then
+    eval "$(brew shellenv)"
+fi
 
 ##############################################################################
 #                           终端交互与显示                                   #
 ##############################################################################
 
 # 欢迎信息
-figlet "HI LIN"
+if command -v figlet >/dev/null 2>&1; then
+    figlet "HI LIN"
+fi
 
 # 历史命令时间戳格式
 HIST_STAMPS="yyyy-mm-dd"
-
 
 ##############################################################################
 #                           Zsh 行为设置                                     #
@@ -67,7 +76,6 @@ setopt NO_NOMATCH
 
 # 启用 Oh My Zsh 自动更新
 zstyle ':omz:update' mode auto
-
 
 ##############################################################################
 #                           自定义别名配置                                   #
@@ -85,4 +93,3 @@ function y() {
   fi
   rm -f -- "$tmp"
 }
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
