@@ -1,65 +1,74 @@
-" 基础设置
-set nocompatible              " 关闭vi兼容模式
-filetype off                  " 关闭文件类型检测（插件管理需要）
-set encoding=utf-8            " 设置编码
+" ===================== 基础设置 =====================
+set nocompatible              " 关闭 vi 兼容模式
+set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
 
-" 显示设置
+" ===================== 显示设置 =====================
 set number                    " 显示行号
 set relativenumber            " 显示相对行号
-set showcmd                   " 显示输入的命令
+set showcmd                   " 显示输入命令
 set laststatus=2              " 总是显示状态栏
 set ruler                     " 显示光标位置
-" 终端用颜色编号（例如 12 代表蓝色）
 highlight LineNr ctermfg=12 guifg=#4EC9B0
 
-" 编辑设置
-set autoindent                " 自动缩进
-set smartindent               " 智能缩进
-set tabstop=4                 " Tab宽度
-set shiftwidth=4              " 自动缩进宽度
-set expandtab                 " 将Tab转换为空格
-set wrap                      " 自动换行
-set linebreak                 " 按单词换行
-set scrolloff=5               " 光标上下保留5行
-set backspace=indent,eol,start " 允许退格键删除
+" ===================== 编辑设置 =====================
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set wrap
+set linebreak
+set scrolloff=5
+set backspace=indent,eol,start
 
-" 搜索设置
-set incsearch                 " 实时搜索
-set hlsearch                  " 搜索结果高亮
-set ignorecase                " 忽略大小写
-set smartcase                 " 大写字母时区分大小写
+" 搜索
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
-" jk映射为ESC，快速退出插入模式
+" jk 映射 ESC
 inoremap jk <ESC>
 nnoremap jk jk
 
-" 关闭备份、交换和撤销文件功能 - 新增设置
-set nobackup                  " 关闭备份文件
-set nowritebackup             " 不创建临时备份文件
-set noswapfile                " 关闭交换文件
-set noundofile                " 关闭撤销文件
+" 关闭备份/交换/撤销文件
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
 
-" 其他设置
-set autowrite                 " 自动保存
-set mouse=a                   " 启用鼠标支持
-set history=1000              " 命令历史记录数量
+set autowrite
+set mouse=a
+set history=1000
 
-" 插件管理 - Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'  " Vundle本身
+" ===================== 插件加载 =====================
+" Vim 8+ 原生包管理路径
+" 插件放在 ~/.vim/pack/plugins/start 下即可自动加载
 
-" 实用插件
-Plugin 'tpope/vim-surround'    " 处理括号、引号等包围结构
-Plugin 'tpope/vim-commentary'  " 快速注释代码
-Plugin 'preservim/nerdtree'    " 文件浏览器
-Plugin 'itchyny/lightline.vim' " 美化状态栏
+" 检查 NERDTree 是否存在再映射
+if isdirectory(expand("~/.vim/pack/plugins/start/nerdtree"))
+    nnoremap <F2> :NERDTreeToggle<CR>
+endif
 
-call vundle#end()
-filetype plugin indent on     " 启用文件类型检测
+" 检查 lightline 是否存在
+if isdirectory(expand("~/.vim/pack/plugins/start/lightline.vim"))
+    " 这里可以放 lightline 配置
+    let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ }
+endif
 
-" 插件配置
-" NERDTree配置
-map <F2> :NERDTreeToggle<CR>  " F2键开关文件浏览器
+" ===================== 插件路径示例 =====================
+" 使用 pack 机制：
+" mkdir -p ~/.vim/pack/plugins/start
+" cd ~/.vim/pack/plugins/start
+" git clone https://github.com/preservim/nerdtree.git
+# git clone https://github.com/itchyny/lightline.vim.git
+# git clone https://github.com/tpope/vim-surround.git
+# git clone https://github.com/tpope/vim-commentary.git
+
+" ===================== 文件类型 =====================
+filetype plugin indent on
+syntax on
