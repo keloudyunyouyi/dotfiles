@@ -65,9 +65,9 @@ endif
 " mkdir -p ~/.vim/pack/plugins/start
 " cd ~/.vim/pack/plugins/start
 " git clone https://github.com/preservim/nerdtree.git
-# git clone https://github.com/itchyny/lightline.vim.git
-# git clone https://github.com/tpope/vim-surround.git
-# git clone https://github.com/tpope/vim-commentary.git
+" git clone https://github.com/itchyny/lightline.vim.git
+" git clone https://github.com/tpope/vim-surround.git
+" git clone https://github.com/tpope/vim-commentary.git
 
 " ===================== 文件类型 =====================
 filetype plugin indent on
